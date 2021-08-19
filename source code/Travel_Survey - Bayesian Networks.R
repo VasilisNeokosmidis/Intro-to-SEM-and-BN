@@ -464,6 +464,12 @@ cpquery(Bayesian_network, event = (E == "high") & (T == "car"),evidence = (O == 
 #The probability of Education=high and Travel=car given Occupation=emp with likelihood weighting (even more accurate to the exact)
 cpquery(Bayesian_network, event = (E == "high") & (T == "car"),evidence = list(O = "emp"), method = "lw")
 
+#The probability of Travel=car and Sex=M given Age=young with likelihood weighting
+cpquery(Bayesian_network, event = (T == "car") & (S=="M"),evidence = list(A = "young"), method = "lw")
+
+#The probability of Travel=car and Sex=F given Age=young with likelihood weighting
+cpquery(Bayesian_network, event = (T == "car") & (S=="F"),evidence = list(A = "young"), method = "lw")
+
 #The probability of Sex=F and Travel=car
 cpquery(Bayesian_network, event = (S == "F") & (T == "car"),evidence = ((A == "young") & (E == "uni")) | (A == "adult"))
 
