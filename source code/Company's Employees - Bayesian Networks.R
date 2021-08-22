@@ -578,19 +578,19 @@ dsep(bn.estimation.bayes2, x = "NCW", y = "YWC", z = "YAC")
 
     ###Approximate Inference ----
 #The probability of Age=adult and Mnl=low given JbL=low
-cpquery(bn.estimation.bayes2, event = (Age=='adult') & (Mnl=='low'),evidence = (JbL=='low'))
+cpquery(bn.estimation.bayes2, event = (Age=='adult') & (Mnl=='low'),evidence = (JbL=='low'),n=10^6)
 
 #The probability of JbL=low and Mnl=low given Age=old and TWY=(20,30] or YAC=(20,30]
-cpquery(bn.estimation.bayes2, event = (JbL == "low") & (Mnl == "low"),evidence = ((Age == "old") & (TWY == "(20,30]")) | (YAC == "(20,30]"))
+cpquery(bn.estimation.bayes2, event = (JbL == "low") & (Mnl == "low"),evidence = ((Age == "old") & (TWY == "(20,30]")) | (YAC == "(20,30]"),n=10^6)
 
 #The probability of JbL=excellent and Mnl=very high given Age=old and TWY=(20,30] or YAC=(20,30]
-cpquery(bn.estimation.bayes2, event = (JbL == "excellent") & (Mnl == "very high"),evidence = ((Age == "old") & (TWY == "(20,30]")) | (YAC == "(20,30]"))
+cpquery(bn.estimation.bayes2, event = (JbL == "excellent") & (Mnl == "very high"),evidence = ((Age == "old") & (TWY == "(20,30]")) | (YAC == "(20,30]"),n=10^6)
 
 #The probability of YAC=[0,10] given Age=old and NCW=(6,8] and TWY=(20,30]
-cpquery(bn.estimation.bayes2, event = (YAC == "[0,10]"),evidence = ((Age == "old") & (NCW=="(6,8]") & (TWY == "(20,30]")))
+cpquery(bn.estimation.bayes2, event = (YAC == "[0,10]"),evidence = ((Age == "old") & (NCW=="(6,8]") & (TWY == "(20,30]")),n=10^6)
 
 #The probability of YAC=(10,20] given Age=old and NCW=(6,8] and TWY=(20,30]
-cpquery(bn.estimation.bayes2, event = (YAC == "(20,30]"),evidence = ((Age == "old") & (NCW=="(6,8]") & (TWY == "(20,30]")))
+cpquery(bn.estimation.bayes2, event = (YAC == "(20,30]"),evidence = ((Age == "old") & (NCW=="(6,8]") & (TWY == "(20,30]")),n=10^6)
 
   ##Graphical Representation of the Bayesian Network ----
     ###Fancy DAG2 plot ----
