@@ -470,7 +470,7 @@ cpquery(Bayesian_network, event = (T == "car") & (S=="M"),evidence = list(A = "y
 #The probability of Travel=car and Sex=F given Age=young with likelihood weighting
 cpquery(Bayesian_network, event = (T == "car") & (S=="F"),evidence = list(A = "young"), method = "lw")
 
-#The probability of Sex=F and Travel=car
+#The probability of Sex=F and Travel=car given that Age=young and Education=uni or Age=adult
 cpquery(Bayesian_network, event = (S == "F") & (T == "car"),evidence = ((A == "young") & (E == "uni")) | (A == "adult"))
 
 #The random observations for Education and Travel that match O=emp
