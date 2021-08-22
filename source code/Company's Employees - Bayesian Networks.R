@@ -488,6 +488,10 @@ plot(DAG2)
 DAG2 <- set.arc(DAG2, from = "NCW", to = "YAC")
 plot(DAG2,main="DAG2")
 plot(DAG,main="DAG")
+
+    ###Model String of DAG2 ----
+modelstring(DAG2)
+
     ###Network Arc Strength and Scores of DAG2 ----
 #Conditional Independence Tests - Arc Strength
 arcs_power<-arc.strength(DAG2, data = df, criterion = "mi");arcs_power
