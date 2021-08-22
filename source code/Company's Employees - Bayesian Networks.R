@@ -4,10 +4,6 @@ library(dplyr)
 library(DescTools)
 library(psych)
 
-  ##For Correlation and Covariance ----
-library(PerformanceAnalytics)
-library(corrplot)
-
   ##For Bayesian Networks ----
     ###Necessary to run the junction function ----
 if (!requireNamespace("BiocManager", quietly = TRUE))
