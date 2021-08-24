@@ -29,20 +29,12 @@ setwd("C:/Users/Yannis/Desktop/RStudio")
 df<-read.csv("C:/Users/Yannis/Desktop/PAMAK_THESIS_R_CODES/Attrition_project.csv",header = T,sep = ",")
 
   ##Selecting the desired variables for the BN (from a SEM model) ----
-names(df)
-
 #Renaming the Age variables, has weird name
 names(df)[1]<-c("Age")
 
-df<-df %>% select(Age,
-                  JobLevel,
-                  MonthlyIncome,
-                  NumCompaniesWorked,
-                  TotalWorkingYears,
-                  YearsAtCompany,
-                  YearsInCurrentRole,
-                  YearsSinceLastPromotion,
-                  YearsWithCurrManager)
+#Selecting the variables of interest for BN
+names(df)
+df<-df[,c(1,15,19,21,29,32,33,34,35)]
 
 #Dataset Inspection
 class(df)
