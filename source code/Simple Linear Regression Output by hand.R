@@ -191,7 +191,7 @@ tvalue.b<-b_coefficent/std.error.b;tvalue.b
 tvalue.b<-cor(df2$Taxes,df2$Income)*(sqrt((nrow(df2)-2)/(1-cor(df2$Taxes,df2$Income)^2)));tvalue.b
 
     ###p value of b coefficient ----
-2*pt(-abs(tvalue.b),df=13)
+pvalue.b<-2*pt(-abs(tvalue.b),df=13);pvalue.b
 
     ###Correlation between predictor and outcome through b coefficient ----
 cor(df2$Income,df2$Taxes)
