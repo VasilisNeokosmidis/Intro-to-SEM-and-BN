@@ -22,7 +22,7 @@ library(Rgraphviz)
 getwd()
 
   ##Setting the working directory ----
-setwd("C:/Users/Yannis/Desktop/RStudio")
+setwd("C:/Users/Yannis/Desktop/PAMAK_THESIS_R_CODES")
 
 #Data Overview ----
 #Reading the file in the working directory
