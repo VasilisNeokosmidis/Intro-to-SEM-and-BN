@@ -29,7 +29,7 @@ setwd("C:/Users/Yannis/Desktop/RStudio")
 df<-read.csv("C:/Users/Yannis/Desktop/PAMAK_THESIS_R_CODES/Attrition_project.csv",header = T,sep = ",")
 
   ##Selecting the desired variables for the BN (from a SEM model) ----
-#Renaming the Age variables, has weird name
+#Renaming the Age variable, has weird name
 names(df)[1]<-c("Age")
 
 #Selecting the variables of interest for BN
