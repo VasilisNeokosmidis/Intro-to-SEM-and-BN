@@ -149,8 +149,8 @@ tvalue.b1<-beta_hat[3]/std.error.b1;tvalue.b1
 tvalue.b2<-beta_hat[2]/std.error.b2;tvalue.b2
 
     ###p value of b1 and b2 coefficients ----
-tvalue.b1<-2*pt(-abs(tvalue.b1),df=12);tvalue.b1
-tvalue.b2<-2*pt(-abs(tvalue.b2),df=12);tvalue.b2
+pvalue.b1<-2*pt(-abs(tvalue.b1),df=12);pvalue.b1
+pvalue.b2<-2*pt(-abs(tvalue.b2),df=12);pvalue.b2
 
     ###y-intercept, a ----
 mean(df2$Income)
