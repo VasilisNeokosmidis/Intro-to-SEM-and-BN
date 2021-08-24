@@ -158,15 +158,35 @@ mean(df2$Taxes)
 mean(df2$`House distance from the sea`)
 a_multi<-mean(df2$Income)-(beta_hat[3]*mean(df2$Taxes))-(beta_hat[2]*mean(df2$`House distance from the sea`));a_multi
 
-    ###Standard error of a coefficient !!!!!!!!!!!!!!!!!!!!!!! ----
-#std.error.multi<-
-#std.error.a_multi<-
+        ###Standard error of a coefficient ----
+#Dependent variable
+vY <- as.matrix(df2[,c(-4,-5,-6,-7,-8,-9)])[, 1]
+str(df2)
 
-    ###t value of a coefficient !!!!!!!!!!!!!!!!!!! ----
-#tvalue.a_multi<-
+#Design matrix
+mX <- cbind(constant = 1, as.matrix(df2[,c(-4,-5,-6,-7,-8,-9)])[, -1])
 
-    ###p value of a coefficient !!!!!!!!!!!!!!!!!!! ----
-#pvalue.a_multi<-
+#Coefficient estimates
+vBeta <- solve(t(mX) %*% mX, t(mX) %*% vY) 
+
+#Estimate of sigma-squared
+dSigmaSq <- sum((vY - mX %*% vBeta)^2)/(nrow(mX)-ncol(mX))
+
+#Variance-covariance matrix
+mVarCovar <- dSigmaSq*chol2inv(chol(t(mX) %*% mX))
+
+#Coeff. est. standard errors
+vStdErr <- sqrt(diag(mVarCovar))
+
+#Output
+coefs_and_std.errors<-print(cbind(vBeta, vStdErr))
+coefs_and_std.errors
+
+    ###t value of a coefficient ----
+tvalue.a_multi<-coefs_and_std.errors[1,1]/coefs_and_std.errors[1,2];tvalue.a_multi
+
+    ###p value of a coefficient ----
+pvalue.a_multi<-2*pt(-abs(tvalue.a_multi),df=12);pvalue.a_multi
 
   ##F-statistic ----
 fstatisticmul<-((TSSmul-RSSmul)/2)/((RSSmul)/(15-2-1))
