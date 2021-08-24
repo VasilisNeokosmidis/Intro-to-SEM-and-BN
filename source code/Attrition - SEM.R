@@ -19,10 +19,11 @@ library(semTools)
 getwd()
 
   ##Setting the working directory ----
-setwd("C:/Users/Yannis/Desktop/RStudio")
+setwd("C:/Users/Yannis/Desktop/PAMAK_THESIS_R_CODES")
 
   ##Reading the file in the working directory ----
-df<-read.csv("C:/Users/Yannis/Desktop/RStudio/Attrition/Attrition_project.csv",header = T,sep = ",")
+df<-read.csv("C:/Users/Yannis/Desktop/PAMAK_THESIS_R_CODES/Attrition_project.csv",header = T,sep = ",")
+str(df)
 
   ##Dataset Inspection ----
 class(df)
