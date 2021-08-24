@@ -25,8 +25,9 @@ getwd()
 setwd("C:/Users/Yannis/Desktop/PAMAK_THESIS_R_CODES")
 
 #Data Overview ----
-#Reading the file in the working directory
+  ##Reading the file in the working directory ----
 df<-read.csv("C:/Users/Yannis/Desktop/PAMAK_THESIS_R_CODES/Attrition_project.csv",header = T,sep = ",")
+str(df)
 
   ##Selecting the desired variables for the BN (from a SEM model) ----
 #Renaming the Age variable, has weird name
